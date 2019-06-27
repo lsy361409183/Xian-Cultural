@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.xian.culturaland.mapper.BaseInfoMapper" >
+
+
+    <select id = "selectAllInfo" resultType="BaseInfo">
+        select
+          CulturalId,CulturalName,TypeId,CulturalRegion,CulturalCoordinate
+        from
+          tb_baseinfo
+    </select>
+</mapper>

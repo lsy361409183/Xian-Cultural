@@ -1,0 +1,49 @@
+/* 
+    首页
+*/
+
+.index_body_warp{
+    width: 100%;
+    min-width: 1300px;
+    min-height: 500px;
+    background-color: #ccc;
+}
+
+/* 首页上部标题 */
+.index_body_warp .wl_index_top{
+    background-color: #fff;
+    width: 100%;
+    height: 15%;
+    position: relative;
+}
+.index_body_warp .wl_index_top .index_title{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgb(45, 56, 87);
+}
+
+/* 首页下部按钮和slide */
+.index_body_warp .wl_index_bottom{
+    width: 100%;
+    height: 70%;
+}
+.index_body_warp .wl_index_bottom .slide_page_btn{
+    height: 20%;
+    margin: 0 15%;
+    background-color: #ddd;
+}
+.index_body_warp .wl_index_bottom .slide_page_btn ul{
+    width: 100%;
+    min-width: 1300px;
+    height: 100%;
+}
+.index_body_warp .wl_index_bottom .slide_page_btn ul li{
+    float: left;
+    text-align: center;
+    width: 25%;
+    /* margin-right: 200px; */
+}

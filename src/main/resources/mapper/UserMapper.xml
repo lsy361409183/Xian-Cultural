@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace= "com.xian.culturaland.mapper.UserMapper" >
+    <resultMap id ="UserInfoMap" type="com.xian.culturaland.entity.User">
+        <result column="name" property="name"/>
+        <result column="id" property="id"/>
+    </resultMap>
+    <!--//查询出文地的基本信息：区域、类别、名称、位置-->
+    <select id = "selectAllUsers" resultMap="UserInfoMap">
+        select
+          id,name
+        from
+          test_user
+    </select>
+</mapper>
