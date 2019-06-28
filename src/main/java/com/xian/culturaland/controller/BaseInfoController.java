@@ -4,6 +4,7 @@ import com.xian.culturaland.entity.BaseInfo;
 import com.xian.culturaland.service.BaseInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,13 @@ public class BaseInfoController {
     @ResponseBody
     public List<BaseInfo> selectAllInfo(){
         return baseInfoService.selectAllInfo();
+    }
+
+    //根据区域查询得到文地的信息
+    @RequestMapping("/getRegionData")
+    @ResponseBody
+    public List<BaseInfo> selectInfoByRegion(@RequestParam("CulturalRegion")String CulturalRegion){
+        System.out.println(CulturalRegion);
+        return baseInfoService.selectInfoByRegion(CulturalRegion);
     }
 }

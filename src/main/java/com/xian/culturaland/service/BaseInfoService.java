@@ -15,4 +15,8 @@ public class BaseInfoService {
     public List<BaseInfo> selectAllInfo(){
         return baseInfoMapper.selectAllInfo();
     }
+    //根据区域查询得到文地的信息
+    public List<BaseInfo> selectInfoByRegion(String CulturalRegion){
+        return baseInfoMapper.selectInfoByRegion(CulturalRegion);
+    }
 }

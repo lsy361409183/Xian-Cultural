@@ -16,7 +16,9 @@ $(window).resize(function(){
     setHeight();
 })
 
-
+var layer = new Loca.PointLayer({
+    map: cl_map
+});
 
 function getData() {
     $.ajax({
@@ -31,10 +33,12 @@ function getData() {
 getData()
 
 function getDataByRegion () {
+    layer.setMap(null);
     $.ajax({
         type:"get",
         url:"/getRegionData",
-        data: {culturaRegion: "长安区，临潼区"},
+        data: {
+            CulturalRegion: "长安区"},
         dataType:"json",
         success:function(res){
             renderMap(res)
@@ -53,10 +57,7 @@ function renderMap (data) {
         }
     });
     console.log("dataSource", dataSource)
-    var layer = new Loca.PointLayer({
-        map: cl_map
-    });
-    layer.setMap(null);
+
     layer.setData(dataSource, {
         lnglat: 'lnglat'
     });

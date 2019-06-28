@@ -3,11 +3,21 @@
 
 <mapper namespace= "com.xian.culturaland.mapper.BaseInfoMapper" >
 
-
+    <!--//查询出文地的基本信息：区域、类别、名称、位置-->
     <select id = "selectAllInfo" resultType="BaseInfo">
         select
           CulturalName,TypeId,CulturalRegion,CulturalCoordinate
         from
           tb_baseinfo
     </select>
+
+    <!--//根据区域查询得到文地的信息-->
+    <select id = "selectInfoByRegion" resultType="BaseInfo">
+        select
+          CulturalName,TypeId,CulturalRegion,CulturalCoordinate
+        from
+          tb_baseinfo  where CulturalRegion in (#{CulturalRegion})
+    </select>
 </mapper>
+
+
