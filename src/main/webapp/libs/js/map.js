@@ -29,6 +29,18 @@ function getData() {
     })
 }
 getData()
+
+function getDataByRegion () {
+    $.ajax({
+        type:"get",
+        url:"/getRegionData",
+        data: {culturaRegion: "长安区，临潼区"},
+        dataType:"json",
+        success:function(res){
+            renderMap(res)
+        }
+    });
+}
 function renderMap (data) {
     var dataSource = [];
     dataSource = data.map(function (item){
@@ -44,6 +56,7 @@ function renderMap (data) {
     var layer = new Loca.PointLayer({
         map: cl_map
     });
+    layer.setMap(null);
     layer.setData(dataSource, {
         lnglat: 'lnglat'
     });

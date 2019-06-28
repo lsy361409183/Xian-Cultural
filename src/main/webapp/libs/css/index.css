@@ -47,3 +47,9 @@
     width: 25%;
     /* margin-right: 200px; */
 }
+/*切换按钮icon*/
+.index_body_warp .wl_index_bottom .slide_page_btn .slide_btn_icon{
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto;
+}
