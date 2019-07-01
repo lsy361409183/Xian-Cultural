@@ -16,7 +16,7 @@
         select
           CulturalName,TypeId,CulturalRegion,CulturalCoordinate
         from
-          tb_baseinfo  where CulturalRegion in (#{CulturalRegion})
+          tb_baseinfo where CulturalRegion in (#{CulturalRegion})
     </select>
 </mapper>
 

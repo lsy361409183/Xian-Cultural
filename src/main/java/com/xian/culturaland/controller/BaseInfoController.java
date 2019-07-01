@@ -24,7 +24,7 @@ public class BaseInfoController {
     //根据区域查询得到文地的信息
     @RequestMapping("/getRegionData")
     @ResponseBody
-    public List<BaseInfo> selectInfoByRegion(@RequestParam("CulturalRegion")String CulturalRegion){
+    public List<BaseInfo> selectInfoByRegion(@RequestParam("CulturalRegion") String CulturalRegion){
         System.out.println(CulturalRegion);
         return baseInfoService.selectInfoByRegion(CulturalRegion);
     }

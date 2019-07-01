@@ -16,10 +16,12 @@ $(window).resize(function(){
     setHeight();
 })
 
+// 创建可视化图层
 var layer = new Loca.PointLayer({
     map: cl_map
 });
 
+// 初始显示文地点
 function getData() {
     $.ajax({
         type:"get",
@@ -33,18 +35,18 @@ function getData() {
 getData()
 
 function getDataByRegion () {
-    layer.setMap(null);
+    // layer.setMap(null);
     $.ajax({
         type:"get",
         url:"/getRegionData",
-        data: {
-            CulturalRegion: "长安区"},
+        data: {CulturalRegion: "长安区"},
         dataType:"json",
         success:function(res){
             renderMap(res)
         }
     });
 }
+
 function renderMap (data) {
     var dataSource = [];
     dataSource = data.map(function (item){
