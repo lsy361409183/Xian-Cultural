@@ -12,11 +12,15 @@
     </select>
 
     <!--//根据区域查询得到文地的信息-->
+    <sql id="Base_Column_List">
+         CulturalName,TypeId,CulturalRegion,CulturalCoordinate
+    </sql>
     <select id = "selectInfoByRegion" resultType="BaseInfo">
-        select
-          CulturalName,TypeId,CulturalRegion,CulturalCoordinate
+        SELECT
+        <include refid="Base_Column_List" />
         from
-          tb_baseinfo where CulturalRegion in (#{CulturalRegion})
+          tb_baseinfo WHERE CulturalRegion IN
+        (${CulturalRegion})
     </select>
 </mapper>
 

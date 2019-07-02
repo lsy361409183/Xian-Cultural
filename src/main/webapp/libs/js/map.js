@@ -39,7 +39,7 @@ function getDataByRegion () {
     $.ajax({
         type:"get",
         url:"/getRegionData",
-        data: {CulturalRegion: "长安区"},
+        data: {CulturalRegion: "'长安区','临潼区'"},
         dataType:"json",
         success:function(res){
             renderMap(res)

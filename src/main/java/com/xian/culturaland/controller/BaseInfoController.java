@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -24,8 +26,18 @@ public class BaseInfoController {
     //根据区域查询得到文地的信息
     @RequestMapping("/getRegionData")
     @ResponseBody
-    public List<BaseInfo> selectInfoByRegion(@RequestParam("CulturalRegion") String CulturalRegion){
-        System.out.println(CulturalRegion);
+    public List<BaseInfo> selectInfoByRegion(@RequestParam("CulturalRegion")String CulturalRegion){
+//        System.out.println(CulturalRegion[0]+CulturalRegion[1]);
+//        //把字符串放进字符串数组里
+//        List<String> list =new ArrayList<String>();
+//        for (int i = 0; i < CulturalRegion.length; i++){
+//            list.add(CulturalRegion[i]);
+//        }
+//        System.out.println(list);
+//        String[] arr = list.toArray(new String[0]);
+//        System.out.println(Arrays.toString(arr));
+//        return baseInfoService.selectInfoByRegion(list);
         return baseInfoService.selectInfoByRegion(CulturalRegion);
+
     }
 }
